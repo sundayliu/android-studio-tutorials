@@ -7,7 +7,7 @@ model {
 
         defaultConfig {
             applicationId = "com.sundayliu.helloworld"
-            minSdkVersion.apiLevel = 8
+            minSdkVersion.apiLevel = 9
             targetSdkVersion.apiLevel = 24
             versionCode = 1
             versionName = "1.0"
@@ -21,16 +21,13 @@ model {
             }
         }
 
-        sources{
-            main{
-                jni{
-
-                }
-            }
-        }
 
         ndk {
             moduleName = "helloworld"
+            platformVersion = 9
+            stl = "c++_static"
+            cppFlags.addAll(['-std=c++11'])
+            ldLibs.addAll(['log'])
         }
     }
 }
