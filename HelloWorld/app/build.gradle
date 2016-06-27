@@ -25,9 +25,11 @@ model {
         ndk {
             moduleName = "helloworld"
             platformVersion = 9
+            toolchain = "clang"
             stl = "c++_static"
             cppFlags.addAll(['-std=c++11'])
-            ldLibs.addAll(['log'])
+            ldLibs.addAll(['log', 'atomic'])
+            abiFilters.addAll(['armeabi', 'arm64-v8a'])
         }
     }
 }
