@@ -1,5 +1,7 @@
 apply plugin: 'com.android.model.application'
 
+def temp = rootProject.getRootDir().parent
+logger.error(temp)
 model {
     android {
         compileSdkVersion = 24
@@ -29,8 +31,20 @@ model {
             stl = "c++_static"
             cppFlags.addAll(['-std=c++11'])
             ldLibs.addAll(['log', 'atomic'])
-            abiFilters.addAll(['arm64-v8a'])
+            abiFilters.addAll(['armeabi', 'armeabi-v7a', 'x86'])
         }
+
+        sources{
+            main{
+                jni{
+                    source{
+                        srcDirs 'src/main/jni'
+                    }
+                }
+            }
+        }
+
+
     }
 }
 
