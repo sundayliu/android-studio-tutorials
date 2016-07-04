@@ -23,6 +23,7 @@ model {
             platformVersion = 9
             cppFlags.addAll(['-std=c++11'])
             stl = "c++_static"
+            ldLibs.add("log")
         }
     }
 }

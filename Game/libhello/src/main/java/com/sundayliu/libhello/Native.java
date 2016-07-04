@@ -7,6 +7,6 @@ public class Native {
     public static native String getStringFromJNI();
 
     static{
-        System.loadLibrary("hello");
+        //System.loadLibrary("hello");
     }
 }

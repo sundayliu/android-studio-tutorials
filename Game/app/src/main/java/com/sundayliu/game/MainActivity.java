@@ -21,5 +21,9 @@ public class MainActivity extends AppCompatActivity {
         tv = (TextView)findViewById(R.id.tv_add);
         text = "[hello]1 + 2 = " + Hello.add(1,2);
         tv.setText(text);
+
+        tv = (TextView)findViewById(R.id.tv_jasper);
+        text = "[jasper] " + com.sundayliu.jasper.Jasper.getString();
+        tv.setText(text);
     }
 }
